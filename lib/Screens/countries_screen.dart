@@ -7,7 +7,12 @@ class GridItem {
   GridItem({required this.imageUrl, required this.text});
 }
 
-class Countries extends StatelessWidget {
+class Countries extends StatefulWidget {
+  @override
+  State<Countries> createState() => _CountriesState();
+}
+
+class _CountriesState extends State<Countries> {
   final List<GridItem> items = [
     GridItem(imageUrl: 'assets/images/علم-مصر-أهم-الحقائق.jpg', text: 'Egypt'),
     GridItem(
@@ -36,25 +41,53 @@ class Countries extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           final item = items[index];
-
           return GridTile(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Image.asset(
+            child: GestureDetector(
+              onTap: () {
+                // Navigate to the leagues screen for the specific country here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LeaguesScreen(country: item.text),
+                  ),
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
                     item.imageUrl,
                   ),
-                ),
-                Text(
-                  item.text,
-                  style: TextStyle(fontSize: 15, color: Colors.white),
-                ),
-              ],
+                  Text(
+                    item.text,
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class LeaguesScreen extends StatelessWidget {
+  final String country;
+
+  LeaguesScreen({required this.country});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Leagues of $country'),
+      ),
+      body: Center(
+        child: Text(
+          'Display leagues of $country',
+          style: TextStyle(fontSize: 20),
+        ),
       ),
     );
   }
