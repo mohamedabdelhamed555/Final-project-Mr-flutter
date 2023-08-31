@@ -1,6 +1,5 @@
-
+import 'package:final_project/Screens/teams_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sports_app/Screens/teams_screen.dart';
 
 import '../../Screens/splash_view.dart';
 

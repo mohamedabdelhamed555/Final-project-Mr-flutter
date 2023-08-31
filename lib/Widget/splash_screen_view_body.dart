@@ -1,6 +1,6 @@
+import 'package:final_project/Widget/custom_splash_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sports_app/Widget/custom_splash_image.dart';
 
 import '../core/utils/add_router.dart';
 import '../core/utils/assets.dart';
@@ -36,14 +36,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
       vsync: this,
       duration: const Duration(milliseconds: 900),
     );
-    fadingAnimation = Tween<double>(begin: 0.2, end: 1.0).animate(animationController);
+    fadingAnimation =
+        Tween<double>(begin: 0.2, end: 1.0).animate(animationController);
     animationController.repeat(reverse: true);
   }
 
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 3),
-          () {
+      () {
         GoRouter.of(context).push(AppRouter.kTeamsScreenView);
       },
     );

@@ -18,7 +18,7 @@ class GridItemTeams extends StatelessWidget {
         childrenDelegate: SliverChildListDelegate([
           // First row
           ClipRRect(
-             borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(50),
             child: Column(
               children: [
                 Image.network(

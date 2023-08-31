@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:final_project/model/data/countrydata.dart';
+import 'package:final_project/model/data/countrys_data.dart';
 import 'package:final_project/model/repository/get_repo_country.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';

@@ -8,7 +8,7 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height*1/7,
+      height: MediaQuery.of(context).size.height * 1 / 7,
       child: TextField(
         style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
