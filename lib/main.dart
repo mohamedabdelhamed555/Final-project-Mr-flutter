@@ -1,8 +1,13 @@
 import 'package:final_project/Screens/countries_screen.dart';
+<<<<<<< HEAD
+import 'package:final_project/Screens/on_boarding_view.dart';
+=======
 import 'package:final_project/Screens/home_screen.dart';
+>>>>>>> 4858694fb8cd96c1ea12538d3745f6d321ffbcac
 import 'package:final_project/model/cubit/cubit/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(final_project());
@@ -19,9 +24,16 @@ class final_project extends StatelessWidget {
           create: (BuildContext context) => GetContryCubit(),
         ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+        ),
         debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
+        home: OnBoardingView(),
+=======
         home: homeScreen(),
+>>>>>>> 4858694fb8cd96c1ea12538d3745f6d321ffbcac
       ),
     );
   }
