@@ -1,3 +1,4 @@
+import 'package:final_project/Screens/countries_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class homeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xff14142B),
         appBar: AppBar(
@@ -31,9 +33,19 @@ class homeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 color: Color(0xff222232),
               ),
-              child: GridItem(
-                text: 'Football',
-                image: AssetImage('assets/football.png'),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => Countries(),
+                    ),
+                  );
+                },
+                child: GridItem(
+                  text: 'Football',
+                  image: AssetImage('assets/images/football.jpeg'),
+                ),
               ),
             ),
             Container(
@@ -43,7 +55,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Basketball',
-                image: AssetImage('assets/basketball (1).png'),
+                image: AssetImage('assets/images/basketbal.jpeg'),
               ),
             ),
             Container(
@@ -53,7 +65,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Tennis',
-                image: AssetImage('assets/tennis.png'),
+                image: AssetImage('assets/images/tennis.jpeg'),
               ),
             ),
             Container(
@@ -63,7 +75,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Cricket',
-                image: AssetImage('assets/cricket (1).png'),
+                image: AssetImage('assets/images/cricket.jpeg'),
               ),
             ),
           ],
