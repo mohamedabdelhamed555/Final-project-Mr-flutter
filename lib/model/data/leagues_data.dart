@@ -1,18 +1,12 @@
-class AutoGenerate {
-  AutoGenerate({
-class leagues {
-  leagues({
+class Leagues {
+  Leagues({
     required this.success,
     required this.result,
   });
   late final int success;
   late final List<Result> result;
 
-
-  AutoGenerate.fromJson(Map<String, dynamic> json) {
-
-  leagues.fromJson(Map<String, dynamic> json) {
-
+  Leagues.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     result = List.from(json['result']).map((e) => Result.fromJson(e)).toList();
   }
