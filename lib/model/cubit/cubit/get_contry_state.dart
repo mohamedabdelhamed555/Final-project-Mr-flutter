@@ -1,9 +1,7 @@
 part of 'get_contry_cubit.dart';
 
 @immutable
-sealed class GetContryState {}
 
-final class GetContryInitial extends GetContryState {}
 
 abstract class CountriesState {}
 
