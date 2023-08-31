@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:final_project/model/data/countrydata.dart';
+import 'package:final_project/model/data/countrys_data.dart';
 import 'package:http/http.dart' as http;
 
 class GetNewsRepo {

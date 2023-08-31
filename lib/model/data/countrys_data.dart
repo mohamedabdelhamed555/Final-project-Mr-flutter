@@ -1,18 +1,12 @@
-class AutoGenerate {
-  AutoGenerate({
-class leagues {
-  leagues({
+class Countries {
+  Countries({
     required this.success,
     required this.result,
   });
   late final int success;
   late final List<Result> result;
 
-
-  AutoGenerate.fromJson(Map<String, dynamic> json) {
-
-  leagues.fromJson(Map<String, dynamic> json) {
-
+  Countries.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     result = List.from(json['result']).map((e) => Result.fromJson(e)).toList();
   }
@@ -27,36 +21,28 @@ class leagues {
 
 class Result {
   Result({
-    required this.leagueKey,
-    required this.leagueName,
     required this.countryKey,
     required this.countryName,
-    this.leagueLogo,
+    this.countryIso2,
     this.countryLogo,
   });
-  late final int leagueKey;
-  late final String leagueName;
   late final int countryKey;
   late final String countryName;
-  late final String? leagueLogo;
+  late final String? countryIso2;
   late final String? countryLogo;
 
   Result.fromJson(Map<String, dynamic> json) {
-    leagueKey = json['league_key'];
-    leagueName = json['league_name'];
     countryKey = json['country_key'];
     countryName = json['country_name'];
-    leagueLogo = null;
+    countryIso2 = null;
     countryLogo = null;
   }
 
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
-    _data['league_key'] = leagueKey;
-    _data['league_name'] = leagueName;
     _data['country_key'] = countryKey;
     _data['country_name'] = countryName;
-    _data['league_logo'] = leagueLogo;
+    _data['country_iso2'] = countryIso2;
     _data['country_logo'] = countryLogo;
     return _data;
   }
