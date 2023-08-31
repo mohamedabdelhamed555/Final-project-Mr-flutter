@@ -1,4 +1,5 @@
 import 'package:final_project/Screens/countries_screen.dart';
+import 'package:final_project/Screens/home_screen.dart';
 import 'package:final_project/model/cubit/cubit/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,7 @@ class final_project extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Countries(),
+        home: homeScreen(),
       ),
     );
   }
