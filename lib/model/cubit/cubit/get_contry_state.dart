@@ -1,8 +1,6 @@
 part of 'get_contry_cubit.dart';
 
 @immutable
-
-
 abstract class CountriesState {}
 
 class CountriesInitial extends CountriesState {}
