@@ -1,5 +1,4 @@
 import 'package:final_project/core/utils/add_router.dart';
-import 'package:final_project/Screens/players_screen.dart';
 import 'package:final_project/model/cubit/cubit/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +24,6 @@ class final_project extends StatelessWidget {
           fontFamily: 'Poppins',
         ),
         debugShowCheckedModeBanner: false,
-        // home: homeScreen(),
       ),
     );
   }
