@@ -45,7 +45,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).push(AppRouter.kTeamsScreenView);
+        GoRouter.of(context).push(AppRouter.kOnBoardingView);
       },
     );
   }
@@ -56,7 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         FadeTransition(
           opacity: fadingAnimation,
-          child: CustomSplashImage(image: AssetsData.logo),
+          child: CustomSplashImage(image: AssetsData.ronaldo),
         ),
       ],
     );

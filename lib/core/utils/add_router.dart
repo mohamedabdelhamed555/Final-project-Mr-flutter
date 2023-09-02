@@ -1,3 +1,5 @@
+import 'package:final_project/Screens/on_boarding_view.dart';
+import 'package:final_project/Screens/playerscreen.dart';
 import 'package:final_project/Screens/teams_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -5,6 +7,7 @@ import '../../Screens/splash_view.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
+  static const kOnBoardingView = '/OnBoardingView';
   static const kSearchView = '/SearchView';
   static const kBookDetailsView = '/BookDetailsViewBody';
   static const kTeamsScreenView = '/TeamsScreenView';
@@ -18,10 +21,10 @@ abstract class AppRouter {
         path: kTeamsScreenView,
         builder: (context, state) => const TeamsScreenView(),
       ),
-      // GoRoute(
-      //   path: kHomeView,
-      //   builder: (context, state) => const HomeView(),
-      // ),
+      GoRoute(
+        path: kOnBoardingView,
+        builder: (context, state) => const OnBoardingView(),
+      ),
       // GoRoute(
       //   path: kSearchView,
       //   builder: (context, state) => const SearchView(),
