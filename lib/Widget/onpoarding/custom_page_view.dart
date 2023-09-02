@@ -18,12 +18,12 @@ class CustomPageView extends StatelessWidget {
           subTitle: 'I will be with you in everything about sports',
         ),
         PageViewItem(
-          image: 'assets/images/img2.png',
+          image: 'assets/images/Messi.png',
           title: 'Hello amegos',
           subTitle: 'You will know the dates of all matches',
         ),
         PageViewItem(
-          image: 'assets/images/img3.png',
+          image: 'assets/images/vardy.png',
           title: 'Hello amegos',
           subTitle: 'You will know sports news',
         )
