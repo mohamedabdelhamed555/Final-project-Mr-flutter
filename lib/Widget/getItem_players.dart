@@ -1,19 +1,67 @@
 import 'package:flutter/material.dart';
 
+List names = [
+  'Cristiano Ronaldo',
+  'Lionel Messi',
+  'Neymar Jr',
+  'Sergio Ramos',
+];
+List numbers = [
+  '7',
+  '10',
+  '10',
+  "4",
+];
+List country = [
+  'Portugal',
+  'Argentina',
+  'Brazil',
+  'Spain',
+];
 
-List names =[ 'Cristiano Ronaldo' , 'Lionel Messi', 'Neymar Jr',  'Sergio Ramos',];
-List numbers = ['7' ,  '10','10',"4",];
-List country =  ['Portugal','Argentina', 'Brazil' ,'Spain',];
+List imagess = [
+  "assets/images/cristiano_ronaldo.jpg",
+  "assets/images/Messi.png",
+  "assets/images/neymar.png",
+  "assets/images/ramos.png"
+];
+List positions = [
+  'Forward',
+  'Forward',
+  'Forward',
+  "Defender",
+];
+List ages = [
+  '36',
+  '34',
+  '29',
+  '35',
+];
 
-List imagess =[ "assets/images/cristiano_ronaldo.jpg",  "assets/images/Messi.png",  "assets/images/neymarjr.jpg","assets/images/ramos.png" ];
-List positions = ['Forward',  'Forward','Forward',"Defender" ,];
-List ages =  ['36' ,'34','29', '35',];
-
-List yellowCards =[ '12' , '19', '30','183',];
-List redCards = ['1' , '0' , '2','26', ];
-List goals =  [ '780','672', '258' ,'101',];
-List assists =[  '226', '305', '174','40', ];
-
+List yellowCards = [
+  '12',
+  '19',
+  '30',
+  '183',
+];
+List redCards = [
+  '1',
+  '0',
+  '2',
+  '26',
+];
+List goals = [
+  '780',
+  '672',
+  '258',
+  '101',
+];
+List assists = [
+  '226',
+  '305',
+  '174',
+  '40',
+];
 
 // List dataList
 List dataBase = [
@@ -22,7 +70,7 @@ List dataBase = [
     // 'color': Colors.blue,
     'Number': '7',
     'Country': 'Portugal',
-    'Image':  AssetImage("assets/images/Ronaldo.png"),
+    'Image': AssetImage("assets/images/Ronaldo.png"),
     'Position': 'Forward',
     'Age': '36',
     'Yellow cards': '12',
@@ -50,7 +98,7 @@ List dataBase = [
     // 'color': Colors.blue,
     'Number': '10',
     'Country': 'Brazil',
-    'Image':  AssetImage("assets/images/Nemar.png"),
+    'Image': AssetImage("assets/images/Nemar.png"),
     'Position': 'Forward',
     'Age': '29',
     'Yellow cards': '30',
@@ -65,12 +113,12 @@ List dataBase = [
     'Number': "4",
     'Country': 'Spain',
     'Image': AssetImage("assets/images/ramos"),
-    'Position': "Defender" ,
+    'Position': "Defender",
     'Age': '35',
     'Yellow cards': '183',
     'Red cards': '26',
     'Goals': '101',
-    'Assists':'40',
+    'Assists': '40',
   },
 // ////
 //   {
@@ -87,7 +135,6 @@ List dataBase = [
 //     'Assists':
 //   },
 ////
-
 ];
 
 // TextEditingController usernamecontroll = TextEditingController();

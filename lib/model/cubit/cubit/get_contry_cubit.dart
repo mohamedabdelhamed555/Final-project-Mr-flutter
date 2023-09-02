@@ -25,7 +25,7 @@ class GetContryCubit extends Cubit<CountriesState> {
   void searchItems(List<Result>? list, String value) {
     filteredItems = list!
         .where((element) =>
-            element.countryName!.toLowerCase().contains(value.toLowerCase()))
+            element.countryName.toLowerCase().contains(value.toLowerCase()))
         .toList();
     emit(CountriesResult());
   }
