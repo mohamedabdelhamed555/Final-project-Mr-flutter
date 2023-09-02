@@ -3,6 +3,7 @@ import 'package:final_project/Screens/playerscreen.dart';
 import 'package:final_project/Screens/teams_screen.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../Screens/players_screen.dart';
 import '../../Screens/splash_view.dart';
 
 abstract class AppRouter {
@@ -15,7 +16,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const SplashView(),
+        builder: (context, state) =>  FirstPage(),
       ),
       GoRoute(
         path: kTeamsScreenView,
