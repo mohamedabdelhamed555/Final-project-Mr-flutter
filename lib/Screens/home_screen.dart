@@ -44,7 +44,7 @@ class homeScreen extends StatelessWidget {
                 },
                 child: GridItem(
                   text: 'Football',
-                  image: AssetImage('assets/images/football.jpeg'),
+                  image: AssetImage('assets/images/football.png'),
                 ),
               ),
             ),
@@ -55,7 +55,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Basketball',
-                image: AssetImage('assets/images/basketbal.jpeg'),
+                image: AssetImage('assets/images/basketball (1).png'),
               ),
             ),
             Container(
@@ -65,7 +65,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Tennis',
-                image: AssetImage('assets/images/tennis.jpeg'),
+                image: AssetImage('assets/images/tennis.png'),
               ),
             ),
             Container(
@@ -75,7 +75,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Cricket',
-                image: AssetImage('assets/images/cricket.jpeg'),
+                image: AssetImage('assets/images/cricket (1).png'),
               ),
             ),
           ],

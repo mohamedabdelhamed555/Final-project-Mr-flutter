@@ -14,38 +14,36 @@ class OnBoardingViewBody extends StatefulWidget {
 }
 
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
-
   PageController? pageController;
 
   @override
   void initState() {
-    pageController=PageController(
-      initialPage: 0
-    )..addListener(() {
-      setState(() {
-    });});
+    pageController = PageController(initialPage: 0)
+      ..addListener(() {
+        setState(() {});
+      });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-   // print(pageController?.page);
+    // print(pageController?.page);
     return Stack(
       children: [
         CustomPageView(
           pageController: pageController,
         ),
-
         Positioned(
           bottom: MediaQuery.of(context).size.height * 0.3,
           left: 0,
           right: 0,
           child: CustomIndicator(
-              dotIndex: pageController!.hasClients ? pageController?.page : 0
-           ),
+              dotIndex: pageController!.hasClients ? pageController?.page : 0),
         ),
-
         Visibility(
-          visible: pageController!.hasClients ? (pageController?.page == 2 ? false : true) : true,
+          visible: pageController!.hasClients
+              ? (pageController?.page == 2 ? false : true)
+              : true,
           child: Positioned(
             top: MediaQuery.of(context).size.height * 0.1,
             right: 32,
@@ -59,28 +57,30 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             ),
           ),
         ),
-
         Positioned(
             bottom: MediaQuery.of(context).size.height * 0.2,
             left: MediaQuery.of(context).size.height * 0.1,
             right: MediaQuery.of(context).size.height * 0.1,
-
             child: CustomButton(
-              onTap: (){
-                if(pageController!.page! < 2){
+              onTap: () {
+                if (pageController!.page! < 2) {
                   pageController?.nextPage(
-                      duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-                }else{
-                  Get.to(() => homeScreen(), transition: Transition.rightToLeft, duration: Duration(milliseconds: 500));
-
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeIn);
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => homeScreen(),
+                    ),
+                  );
                 }
               },
-              text: pageController !.hasClients ? (pageController!.page == 2 ? 'Get Started' : 'Next') : 'Next',
-            )
-        )
+              text: pageController!.hasClients
+                  ? (pageController!.page == 2 ? 'Get Started' : 'Next')
+                  : 'Next',
+            ))
       ],
-
-
     );
   }
 }
