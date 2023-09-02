@@ -1,4 +1,3 @@
-import 'package:final_project/Widget/onpoarding/on_boarding_body.dart';
 import 'package:final_project/Widget/players.dart';
 import 'package:flutter/material.dart';
 
@@ -13,27 +12,36 @@ class playersScreen extends StatelessWidget {
           itemCount: itemss.length,
           itemBuilder: (context, index) {
             final item = itemss[index];
-            return Container(
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
-                    "ronaldo",
-                    style: TextStyle(fontSize: 22, color: Colors.white),
-                  ),
-                  Text(
-                    "Cf",
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 190, 185, 185)),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 1 / 3,
+                    child: Column(
+                      children: [
+                        Text(
+                          item.name,
+                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        ),
+                        Text(
+                          item.position,
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: Color.fromARGB(255, 190, 185, 185)),
+                        ),
+                      ],
+                    ),
                   ),
                   CircleAvatar(
                     radius: 70,
                     backgroundColor: Colors.transparent,
-                    child: Image.asset("assets/images/Ronaldo.webp"),
-                  ),
-                  SizedBox(
-                    height: 20,
+                    child: Image.asset(
+                      item.image,
+                      width: 80,
+                      height: 100,
+                    ),
                   ),
                 ],
               ),

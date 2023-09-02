@@ -16,7 +16,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) =>  FirstPage(),
+        builder: (context, state) => SplashView(),
       ),
       GoRoute(
         path: kTeamsScreenView,

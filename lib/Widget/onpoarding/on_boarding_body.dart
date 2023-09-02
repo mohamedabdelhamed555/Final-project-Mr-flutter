@@ -3,8 +3,6 @@ import 'package:final_project/Widget/onpoarding/custom_button.dart';
 import 'package:final_project/Widget/onpoarding/custom_indicator.dart';
 import 'package:final_project/Widget/onpoarding/custom_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:get/get.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({Key? key}) : super(key: key);
