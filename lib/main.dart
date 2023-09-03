@@ -1,8 +1,9 @@
 import 'package:final_project/core/utils/add_router.dart';
 import 'package:final_project/Screens/players_screen.dart';
-import 'package:final_project/model/cubit/cubit/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'constants.dart';
 
 void main() {
   runApp(final_project());
@@ -13,20 +14,15 @@ class final_project extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<GetContryCubit>(
-          create: (BuildContext context) => GetContryCubit(),
-        ),
-      ],
-      child: MaterialApp.router(
-        routerConfig: AppRouter.router,
-        theme: ThemeData(
-          fontFamily: 'Poppins',
-        ),
-        debugShowCheckedModeBanner: false,
-        // home: homeScreen(),
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: Kprimarycolor,
       ),
+
+      debugShowCheckedModeBanner: false,
+
     );
   }
 }

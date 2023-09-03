@@ -1,4 +1,5 @@
 import 'package:final_project/Screens/home_screen.dart';
+import 'package:final_project/Screens/login_screen.dart';
 import 'package:final_project/Widget/onpoarding/custom_button.dart';
 import 'package:final_project/Widget/onpoarding/custom_indicator.dart';
 import 'package:final_project/Widget/onpoarding/custom_page_view.dart';
@@ -45,7 +46,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           child: Positioned(
             top: MediaQuery.of(context).size.height * 0.1,
             right: 32,
-            child: Text(
+            child: const Text(
               'skip',
               style: TextStyle(
                 fontSize: 18,
@@ -63,13 +64,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               onTap: () {
                 if (pageController!.page! < 2) {
                   pageController?.nextPage(
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeIn);
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute<void>(
-                      builder: (BuildContext context) => homeScreen(),
+                      builder: (BuildContext context) => const LoginScreen(),
                     ),
                   );
                 }
