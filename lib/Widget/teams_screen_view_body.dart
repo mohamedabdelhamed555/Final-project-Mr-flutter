@@ -1,8 +1,6 @@
 import 'package:final_project/Screens/playerscreen.dart';
 import 'package:final_project/Widget/custom_search_text_feild.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../constants.dart';
 import 'custom_grid_item.dart';
 

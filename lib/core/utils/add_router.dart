@@ -1,10 +1,13 @@
 import 'package:final_project/Screens/on_boarding_view.dart';
-import 'package:final_project/Screens/playerscreen.dart';
+
 import 'package:final_project/Screens/teams_screen.dart';
 import 'package:go_router/go_router.dart';
 
+<<<<<<< HEAD
 import '../../Screens/login_screen.dart';
 import '../../Screens/players_screen.dart';
+=======
+>>>>>>> 6d746d0a7bdbd2f1999ba89957b61695c81f8799
 import '../../Screens/splash_view.dart';
 
 abstract class AppRouter {
