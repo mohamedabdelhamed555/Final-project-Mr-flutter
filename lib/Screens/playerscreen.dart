@@ -1,6 +1,7 @@
 import 'package:final_project/Widget/getItem_players.dart';
 import 'package:final_project/Widget/players.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class playersScreen extends StatelessWidget {
   const playersScreen({super.key});
@@ -89,6 +90,19 @@ class playersScreen extends StatelessWidget {
                                                   color: Colors.white),
                                             ),
                                             // Text("positions :${positions[i]}"),
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                            IconButton(
+                                              onPressed: () async {
+                                                // String data = "Name : ${item.name} \nNumber : ${item.Number}\nCountry : ${item.Country}\nPosition : ${item.position}\nAge : ${item.Age}\nYellow Cards : ${item.yellow_cards}\nRed Cards : ${item.red_cards}\nGoals : ${item.Goals}Assists : ${item.Assists} ";
+                                                String data = "Name : ${item.name} \nClub : ${item.club}";
+                                                
+                                                await Share.share(data);
+                                                 
+                                              }, 
+                                              icon: Icon(Icons.share , color: Colors.white,) ,
+                                              ),
                                           ],
                                         ),
                                       ),

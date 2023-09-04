@@ -45,6 +45,8 @@ dependencies:
 
   rive: ^0.11.15
   google_sign_in: ^6.1.5
+  share_plus: ^4.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

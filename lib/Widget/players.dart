@@ -9,6 +9,7 @@ class Player {
   final String Goals;
   final String Assists;
   final String Age;
+  final String club;
 
   Player(
       {required this.name,
@@ -20,7 +21,8 @@ class Player {
       required this.Country,
       required this.Goals,
       required this.Assists,
-      required this.Age});
+      required this.Age,
+      required this.club});
 }
 
 final List<Player> itemss = [
@@ -34,7 +36,9 @@ final List<Player> itemss = [
       Assists: '226',
       Age: '36',
       Number: '7',
-      Country: 'portugal'),
+      Country: 'portugal',
+      club: 'Alnassr'
+      ),
   Player(
       name: 'messi',
       position: 'rmf',
@@ -45,7 +49,8 @@ final List<Player> itemss = [
       Assists: '305',
       Age: '34',
       Number: '10',
-      Country: 'Argentina'),
+      Country: 'Argentina',
+      club: 'Inter Miami'),
   Player(
       name: 'neymar',
       position: 'lmf',
@@ -56,7 +61,8 @@ final List<Player> itemss = [
       Assists: '174',
       Age: '29',
       Number: '10',
-      Country: 'Brazil'),
+      Country: 'Brazil',
+      club: 'AlHilal'),
   Player(
       name: 'Ramos',
       position: 'cb',
@@ -67,7 +73,8 @@ final List<Player> itemss = [
       Assists: '40',
       Age: '35',
       Number: '4',
-      Country: 'spain'),
+      Country: 'spain',
+      club: ''),
   Player(
       name: 'mababi',
       position: 'cf',
@@ -78,7 +85,8 @@ final List<Player> itemss = [
       Assists: '120',
       Age: '25',
       Number: '7',
-      Country: 'Faransa'),
+      Country: 'Faransa',
+      club: 'Sevilla'),
   Player(
       name: 'vardy',
       position: 'CF',
@@ -89,7 +97,8 @@ final List<Player> itemss = [
       Assists: '95',
       Age: '37',
       Number: '9',
-      Country: 'hgfce'),
+      Country: 'hgfce',
+      club: 'Leicester City'),
   Player(
       name: 'salah',
       position: 'rmf',
@@ -100,7 +109,8 @@ final List<Player> itemss = [
       Assists: '210',
       Age: '32',
       Number: '11',
-      Country: 'Egypt'),
+      Country: 'Egypt',
+      club: 'LiverPool'),
   Player(
       name: 'maradona',
       position: 'amf',
@@ -111,7 +121,8 @@ final List<Player> itemss = [
       Assists: '226',
       Age: '70',
       Number: '10',
-      Country: 'Argentina'),
+      Country: 'Argentina',
+      club: 'LiverPool'),
   Player(
       name: 'ronaldinho',
       position: 'amf',
@@ -122,7 +133,8 @@ final List<Player> itemss = [
       Assists: '290',
       Age: '46',
       Number: '10',
-      Country: 'Brazil'),
+      Country: 'Brazil',
+      club: 'LiverPool'),
   Player(
       name: 'Zizo',
       position: 'cmf',
@@ -133,7 +145,8 @@ final List<Player> itemss = [
       Assists: '100',
       Age: '55',
       Number: '5',
-      Country: 'Faransa'),
+      Country: 'Faransa',
+      club: 'LiverPool'),
   Player(
       name: 'medo',
       position: 'CF',
@@ -144,5 +157,6 @@ final List<Player> itemss = [
       Assists: '100',
       Age: '21',
       Number: '17',
-      Country: 'Egypt'),
+      Country: 'Egypt',
+      club: 'LiverPool'),
 ];

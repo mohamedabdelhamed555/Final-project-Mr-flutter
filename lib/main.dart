@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'constants.dart';
 
-flutterfire configure
+// flutterfire configure
 void main()  {
     runApp(const FinalProject()); // Use the correct class name
   }
