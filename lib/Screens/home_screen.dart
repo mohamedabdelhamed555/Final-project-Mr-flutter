@@ -1,5 +1,7 @@
 import 'package:final_project/Screens/countries_screen.dart';
+import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(homeScreen());
@@ -101,7 +103,7 @@ class GridItem extends StatelessWidget {
               builder: ((context) {
                 return Container(
                   child: AlertDialog(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 190, 185, 185),
                     title: Text('Coming Soon'),
                     actions: [
                       TextButton(

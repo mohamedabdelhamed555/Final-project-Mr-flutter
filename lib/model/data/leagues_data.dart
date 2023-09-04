@@ -1,57 +1,57 @@
 class Leagues {
-  Leagues({
-    required this.success,
-    required this.result,
-  });
-  late final int success;
-  late final List<Result> result;
+  int? success;
+  List<Result>? result;
 
-  Leagues.fromJson(Map<String, dynamic> json) {
-    success = json['success'];
-    result = List.from(json['result']).map((e) => Result.fromJson(e)).toList();
-  }
+  Leagues({this.success, this.result});
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['success'] = success;
-    _data['result'] = result.map((e) => e.toJson()).toList();
-    return _data;
-  }
+  factory Leagues.fromJson(Map<String, dynamic> json) => Leagues(
+        success: json['success'] as int?,
+        result: (json['result'] as List<dynamic>?)
+            ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'success': success,
+        'result': result?.map((e) => e.toJson()).toList(),
+      };
 }
 
 class Result {
+  int? leagueKey;
+  String? leagueName;
+  int? countryKey;
+  String? countryName;
+  String? leagueLogo;
+  String? countryLogo;
+
   Result({
-    required this.leagueKey,
-    required this.leagueName,
-    required this.countryKey,
-    required this.countryName,
+    this.leagueKey,
+    this.leagueName,
+    this.countryKey,
+    this.countryName,
     this.leagueLogo,
     this.countryLogo,
   });
-  late final int leagueKey;
-  late final String leagueName;
-  late final int countryKey;
-  late final String countryName;
-  late final String? leagueLogo;
-  late final String? countryLogo;
 
-  Result.fromJson(Map<String, dynamic> json) {
-    leagueKey = json['league_key'];
-    leagueName = json['league_name'];
-    countryKey = json['country_key'];
-    countryName = json['country_name'];
-    leagueLogo = null;
-    countryLogo = null;
-  }
+  factory Result.fromJson(Map<String, dynamic> json) => Result(
+        leagueKey: json['league_key'] as int?,
+        leagueName: json['league_name'] as String?,
+        countryKey: json['country_key'] as int?,
+        countryName: json['country_name'] as String?,
+        leagueLogo: json['league_logo'] as String? ??
+            json['country_logo'] as String? ??
+            "https://as2.ftcdn.net/v2/jpg/04/70/29/87/1000_F_470298738_1eHqTZ0B5AvB3emaESPpvQ93227y7P0l.jpg",
+        countryLogo: json['country_logo'] as String? ??
+            "https://as2.ftcdn.net/v2/jpg/04/70/29/87/1000_F_470298738_1eHqTZ0B5AvB3emaESPpvQ93227y7P0l.jpg",
+      );
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['league_key'] = leagueKey;
-    _data['league_name'] = leagueName;
-    _data['country_key'] = countryKey;
-    _data['country_name'] = countryName;
-    _data['league_logo'] = leagueLogo;
-    _data['country_logo'] = countryLogo;
-    return _data;
-  }
+  Map<String, dynamic> toJson() => {
+        'league_key': leagueKey,
+        'league_name': leagueName,
+        'country_key': countryKey,
+        'country_name': countryName,
+        'league_logo': leagueLogo,
+        'country_logo': countryLogo,
+      };
 }
