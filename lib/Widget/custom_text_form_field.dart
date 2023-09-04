@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final FocusNode? focusNode;
   final String labelText;
   final String errorText;
@@ -10,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.controller,
+    this.controller,
     this.focusNode,
     required this.labelText,
     required this.errorText,
@@ -25,12 +25,13 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         labelStyle: const TextStyle(color: Colors.white),
         labelText: labelText,
-    focusedBorder: OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(25.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white), // تغيير لون الحاشية عند عدم التركيز
+          borderSide: BorderSide(
+              color: Colors.white), // تغيير لون الحاشية عند عدم التركيز
           borderRadius: BorderRadius.circular(25.0),
         ),
         border: OutlineInputBorder(
@@ -46,4 +47,3 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 }
-
