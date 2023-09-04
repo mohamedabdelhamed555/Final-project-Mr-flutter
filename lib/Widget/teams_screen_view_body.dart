@@ -91,9 +91,10 @@ class _TeamsScreenViewBodyState extends State<TeamsScreenViewBody>
                 children: [
                   Image.asset(
                     'assets/images/salah.png',
-                    height: 180,
-                    width: 300,
-                    fit: BoxFit.cover,
+                    height: 100,
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Text('Salah'),
                 ],
@@ -103,11 +104,12 @@ class _TeamsScreenViewBodyState extends State<TeamsScreenViewBody>
               ),
               Column(
                 children: [
-                  Image.network(
-                    'https://alamphoto.com/wp-content/uploads/2021/04/%D8%B5%D9%88%D8%B1-%D9%85%D8%AD%D9%85%D8%AF-%D8%B5%D9%84%D8%A7%D8%AD-%D8%A8%D8%AC%D9%88%D8%AF%D8%A9-%D8%B9%D8%A7%D9%84%D9%8A%D8%A9-2022.jpg',
-                    height: 180,
-                    width: 300,
-                    fit: BoxFit.cover,
+                  Image.asset(
+                    'assets/images/salah.png',
+                    height: 100,
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Text('Salah'),
                 ],

@@ -1,5 +1,6 @@
 import 'package:final_project/core/utils/add_router.dart';
-import 'package:final_project/model/cubit/cubit/get_contry_cubit.dart';
+import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
+import 'package:final_project/model/cubit/leagues/cubit/get_leagues_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,9 +15,11 @@ class final_project extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<GetContryCubit>(
-          create: (BuildContext context) => GetContryCubit(),
-        ),
+        BlocProvider(create: (context) => GetContryCubit()),
+        BlocProvider(create: (context) => GetLeaguesCubit()),
+        // BlocProvider(create: (context) => TeamsCubit()),
+        // BlocProvider(create: (context) => TopScorersCubit()),
+        // BlocProvider(create: (context) => PlayersCubit()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
