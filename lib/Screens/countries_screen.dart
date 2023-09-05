@@ -35,12 +35,13 @@ class _CountriesState extends State<Countries> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => LeaguesScreen(
-                              countryId: state.response.result[index].countryKey
-                                  as String,
-                              countryName:
-                                  state.response.result[index].countryName,
-                              logo: state.response.result[index].countryLogo ??
-                                  'assets/images/علم-مصر-أهم-الحقائق.jpg',
+                              // countryId: state.response.result[index].countryKey
+                              //     as String,
+                              // countryName:
+                              //     state.response.result[index].countryName,
+                              // logo: state.response.result[index].countryLogo ??
+                              //     'assets/images/علم-مصر-أهم-الحقائق.jpg',
+                              country: state.response.result[index].countryName,
                             ),
                           ),
                         );
