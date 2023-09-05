@@ -8,9 +8,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'constants.dart';
 
+
 void main() {
   runApp(const FinalProject()); // Use the correct class name
 }
+
+// flutterfire configure
+void main()  {
+    runApp(const FinalProject()); // Use the correct class name
+  }
+
 
 class FinalProject extends StatelessWidget {
   const FinalProject({Key? key}) : super(key: key);
