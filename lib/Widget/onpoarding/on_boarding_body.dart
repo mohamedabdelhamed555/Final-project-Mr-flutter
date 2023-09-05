@@ -46,13 +46,31 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           child: Positioned(
             top: MediaQuery.of(context).size.height * 0.1,
             right: 32,
+<<<<<<< HEAD
+            child: InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => homeScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'skip',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xff8989415),
+                ),
+                textAlign: TextAlign.left,
+=======
             child: const Text(
               'skip',
               style: TextStyle(
                 fontSize: 18,
                 color: Color(0xff8989415),
+>>>>>>> 93f0e420a523b128bcd5c6ea6fbdbb2c768bfae7
               ),
-              textAlign: TextAlign.left,
             ),
           ),
         ),
