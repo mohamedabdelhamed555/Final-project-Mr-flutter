@@ -16,7 +16,6 @@ class GridItemTeams extends StatelessWidget {
           crossAxisSpacing: 8.0,
         ),
         childrenDelegate: SliverChildListDelegate([
-          // First row
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: Column(
@@ -30,8 +29,6 @@ class GridItemTeams extends StatelessWidget {
               ],
             ),
           ),
-
-          // Add more images here
         ]),
       ),
     );
