@@ -1,9 +1,10 @@
 import 'package:final_project/Screens/home_screen.dart';
-import 'package:final_project/Screens/login_screen.dart';
 import 'package:final_project/Widget/onpoarding/custom_button.dart';
 import 'package:final_project/Widget/onpoarding/custom_indicator.dart';
 import 'package:final_project/Widget/onpoarding/custom_page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:get/get.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({Key? key}) : super(key: key);
@@ -46,9 +47,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           child: Positioned(
             top: MediaQuery.of(context).size.height * 0.1,
             right: 32,
-<<<<<<< HEAD
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute<void>(
@@ -63,13 +63,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   color: Color(0xff8989415),
                 ),
                 textAlign: TextAlign.left,
-=======
-            child: const Text(
-              'skip',
-              style: TextStyle(
-                fontSize: 18,
-                color: Color(0xff8989415),
->>>>>>> 93f0e420a523b128bcd5c6ea6fbdbb2c768bfae7
               ),
             ),
           ),
@@ -82,15 +75,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               onTap: () {
                 if (pageController!.page! < 2) {
                   pageController?.nextPage(
-                      duration: const Duration(milliseconds: 500),
+                      duration: Duration(milliseconds: 500),
                       curve: Curves.easeIn);
                 } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const LoginScreen(),
-                    ),
-                  );
+                  Get.to(() => homeScreen(),
+                      transition: Transition.rightToLeft,
+                      duration: Duration(milliseconds: 500));
                 }
               },
               text: pageController!.hasClients
