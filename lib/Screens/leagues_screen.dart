@@ -67,19 +67,21 @@
 // }
 
 import 'package:final_project/Widget/teams_screen_view_body.dart';
+import 'package:final_project/model/cubit/leagues/cubit/get_leagues_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LeaguesScreen extends StatelessWidget {
-  final String country;
+  final String countryName;
   // final String countryName;
   // final String logo;
-  // final String countryId;
+  final String countryId;
 
   LeaguesScreen({
-    required this.country,
+    required this.countryName,
     // required this.countryName,
     // required this.logo,
-    // required this.countryId,
+    required this.countryId,
   });
 
   @override
@@ -87,24 +89,53 @@ class LeaguesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff14142B),
       appBar: AppBar(
-        title: Text('Leagues of $country'),
+        title: Text('Leagues of $countryName'),
         backgroundColor: Color(0xff14142B),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => const TeamsScreenViewBody(),
+      body: BlocBuilder<GetLeaguesCubit, GetLeaguesState>(
+        builder: (context, state) {
+          if (state is GetLeaguesInitial) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state is LeaguesSuccess) {
+            return ListView.builder(
+              itemCount: state.response.result!.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Image.network(
+                      state.response.result![index].leagueLogo ??
+                          "https://e7.pngegg.com/pngimages/555/717/png-clipart-anonymous-art-anonymous-logo-anonymity-anonymous-user-tor.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const TeamsScreenViewBody(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        state.response.result![index].leagueName as String,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            );
+          } else {
+            return Center(
+              child: const Text(
+                "something went wrong",
+                style: TextStyle(color: Colors.white),
               ),
             );
-          },
-          child: Text(
-            'Display leagues of $country',
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
+          }
+        },
       ),
     );
   }

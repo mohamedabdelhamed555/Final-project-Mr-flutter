@@ -1,5 +1,6 @@
 import 'package:final_project/Screens/leagues_screen.dart';
 import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
+import 'package:final_project/model/cubit/leagues/cubit/get_leagues_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,17 +32,16 @@ class _CountriesState extends State<Countries> {
                   return GridTile(
                     child: GestureDetector(
                       onTap: () {
+                        context.read<GetLeaguesCubit>().getAllLeagues(
+                            "${state.response.result[index].countryKey}");
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => LeaguesScreen(
-                              // countryId: state.response.result[index].countryKey
-                              //     as String,
-                              // countryName:
-                              //     state.response.result[index].countryName,
-                              // logo: state.response.result[index].countryLogo ??
-                              //     'assets/images/علم-مصر-أهم-الحقائق.jpg',
-                              country: state.response.result[index].countryName,
+                              countryId:
+                                  "${state.response.result[index].countryKey}",
+                              countryName:
+                                  state.response.result[index].countryName,
                             ),
                           ),
                         );
@@ -71,11 +71,10 @@ class _CountriesState extends State<Countries> {
             );
           } else {
             return Center(
-              child: ElevatedButton(
-                  onPressed: () {
-                    context.read<GetContryCubit>().getAllCountries();
-                  },
-                  child: const Text("Show Countries")),
+              child: const Text(
+                "something went wrong",
+                style: TextStyle(color: Colors.white),
+              ),
             );
           }
         },

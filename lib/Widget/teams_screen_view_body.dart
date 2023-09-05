@@ -22,12 +22,6 @@ class _TeamsScreenViewBodyState extends State<TeamsScreenViewBody>
   }
 
   @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

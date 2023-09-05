@@ -1,4 +1,4 @@
-import 'package:final_project/Screens/home_screen.dart';
+import 'package:final_project/Screens/login_screen.dart';
 import 'package:final_project/Widget/onpoarding/custom_button.dart';
 import 'package:final_project/Widget/onpoarding/custom_indicator.dart';
 import 'package:final_project/Widget/onpoarding/custom_page_view.dart';
@@ -52,7 +52,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 Navigator.push(
                   context,
                   MaterialPageRoute<void>(
-                    builder: (BuildContext context) => homeScreen(),
+                    builder: (BuildContext context) => LoginScreen(),
                   ),
                 );
               },
@@ -78,9 +78,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                       duration: Duration(milliseconds: 500),
                       curve: Curves.easeIn);
                 } else {
-                  Get.to(() => homeScreen(),
-                      transition: Transition.rightToLeft,
-                      duration: Duration(milliseconds: 500));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => LoginScreen(),
+                    ),
+                  );
                 }
               },
               text: pageController!.hasClients
