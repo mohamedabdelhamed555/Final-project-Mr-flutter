@@ -1,5 +1,7 @@
 import 'package:final_project/Screens/countries_screen.dart';
+import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(homeScreen());
@@ -44,7 +46,7 @@ class homeScreen extends StatelessWidget {
                 },
                 child: GridItem(
                   text: 'Football',
-                  image: AssetImage('assets/images/football.jpeg'),
+                  image: AssetImage('assets/images/football.png'),
                 ),
               ),
             ),
@@ -55,7 +57,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Basketball',
-                image: AssetImage('assets/images/basketbal.jpeg'),
+                image: AssetImage('assets/images/basketball (1).png'),
               ),
             ),
             Container(
@@ -65,7 +67,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Tennis',
-                image: AssetImage('assets/images/tennis.jpeg'),
+                image: AssetImage('assets/images/tennis.png'),
               ),
             ),
             Container(
@@ -75,7 +77,7 @@ class homeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               child: GridItem(
                 text: 'Cricket',
-                image: AssetImage('assets/images/cricket.jpeg'),
+                image: AssetImage('assets/images/cricket (1).png'),
               ),
             ),
           ],
@@ -101,7 +103,7 @@ class GridItem extends StatelessWidget {
               builder: ((context) {
                 return Container(
                   child: AlertDialog(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 190, 185, 185),
                     title: Text('Coming Soon'),
                     actions: [
                       TextButton(

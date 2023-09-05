@@ -19,14 +19,4 @@ class GetContryCubit extends Cubit<CountriesState> {
       }
     });
   }
-
-  late List<Result>? filteredItems;
-
-  void searchItems(List<Result>? list, String value) {
-    filteredItems = list!
-        .where((element) =>
-            element.countryName!.toLowerCase().contains(value.toLowerCase()))
-        .toList();
-    emit(CountriesResult());
-  }
 }

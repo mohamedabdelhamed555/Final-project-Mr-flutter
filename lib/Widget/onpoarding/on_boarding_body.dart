@@ -1,10 +1,9 @@
 import 'package:final_project/Screens/home_screen.dart';
+import 'package:final_project/Screens/login_screen.dart';
 import 'package:final_project/Widget/onpoarding/custom_button.dart';
 import 'package:final_project/Widget/onpoarding/custom_indicator.dart';
 import 'package:final_project/Widget/onpoarding/custom_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:get/get.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({Key? key}) : super(key: key);
@@ -14,41 +13,40 @@ class OnBoardingViewBody extends StatefulWidget {
 }
 
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
-
   PageController? pageController;
 
   @override
   void initState() {
-    pageController=PageController(
-      initialPage: 0
-    )..addListener(() {
-      setState(() {
-    });});
+    pageController = PageController(initialPage: 0)
+      ..addListener(() {
+        setState(() {});
+      });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-   // print(pageController?.page);
+    // print(pageController?.page);
     return Stack(
       children: [
         CustomPageView(
           pageController: pageController,
         ),
-
         Positioned(
           bottom: MediaQuery.of(context).size.height * 0.3,
           left: 0,
           right: 0,
           child: CustomIndicator(
-              dotIndex: pageController!.hasClients ? pageController?.page : 0
-           ),
+              dotIndex: pageController!.hasClients ? pageController?.page : 0),
         ),
-
         Visibility(
-          visible: pageController!.hasClients ? (pageController?.page == 2 ? false : true) : true,
+          visible: pageController!.hasClients
+              ? (pageController?.page == 2 ? false : true)
+              : true,
           child: Positioned(
             top: MediaQuery.of(context).size.height * 0.1,
             right: 32,
+<<<<<<< HEAD
             child: InkWell(
               onTap: (){
                 Navigator.push(
@@ -65,32 +63,41 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   color: Color(0xff8989415),
                 ),
                 textAlign: TextAlign.left,
+=======
+            child: const Text(
+              'skip',
+              style: TextStyle(
+                fontSize: 18,
+                color: Color(0xff8989415),
+>>>>>>> 93f0e420a523b128bcd5c6ea6fbdbb2c768bfae7
               ),
             ),
           ),
         ),
-
         Positioned(
             bottom: MediaQuery.of(context).size.height * 0.2,
             left: MediaQuery.of(context).size.height * 0.1,
             right: MediaQuery.of(context).size.height * 0.1,
-
             child: CustomButton(
-              onTap: (){
-                if(pageController!.page! < 2){
+              onTap: () {
+                if (pageController!.page! < 2) {
                   pageController?.nextPage(
-                      duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-                }else{
-                  Get.to(() => homeScreen(), transition: Transition.rightToLeft, duration: Duration(milliseconds: 500));
-
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn);
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const LoginScreen(),
+                    ),
+                  );
                 }
               },
-              text: pageController !.hasClients ? (pageController!.page == 2 ? 'Get Started' : 'Next') : 'Next',
-            )
-        )
+              text: pageController!.hasClients
+                  ? (pageController!.page == 2 ? 'Get Started' : 'Next')
+                  : 'Next',
+            ))
       ],
-
-
     );
   }
 }
