@@ -18,7 +18,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const TeamsScreenViewBody(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: kTeamsScreenView,

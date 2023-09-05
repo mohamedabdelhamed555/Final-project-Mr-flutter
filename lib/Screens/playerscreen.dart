@@ -112,9 +112,8 @@ class playersScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        2 /
-                                        3,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.5,
                                     child: Column(
                                       children: [
                                         TextButton(
