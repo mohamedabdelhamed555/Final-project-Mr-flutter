@@ -1,4 +1,5 @@
 import 'package:final_project/Screens/login_screen.dart';
+import 'package:final_project/constants.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
@@ -11,11 +12,11 @@ class NavBar extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             accountName: Text(
-              "Raneem Fayez",
+              name,
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             accountEmail: Text(
-              "012987231023",
+              mobileNumber,
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             currentAccountPicture: Image.asset("assets/images/man.png"),

@@ -4,9 +4,6 @@ import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  runApp(homeScreen());
-}
 
 class homeScreen extends StatelessWidget {
   homeScreen();
