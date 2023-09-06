@@ -1,5 +1,3 @@
-import 'package:final_project/Screens/countries_screen.dart';
-import 'package:final_project/Screens/on_boarding_view.dart';
 import 'package:final_project/core/utils/add_router.dart';
 import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
 import 'package:final_project/model/cubit/leagues/cubit/get_leagues_cubit.dart';
