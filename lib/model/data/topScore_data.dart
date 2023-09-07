@@ -39,14 +39,14 @@ class Result {
   });
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
-        playerPlace: json['player_place'] as int? ?? 0,
-        playerName: json['player_name'] as String? ?? "",
-        playerKey: json['player_key'] as int? ?? 0,
-        teamName: json['team_name'] as String? ?? "",
-        teamKey: json['team_key'] as int? ?? 0,
-        goals: json['goals'] as int? ?? 0,
-        assists: json['assists'] as dynamic ?? "",
-        penaltyGoals: json['penalty_goals'] as int? ?? 0,
+        playerPlace: json['player_place'] as int?,
+        playerName: json['player_name'] as String?,
+        playerKey: json['player_key'] as int?,
+        teamName: json['team_name'] as String?,
+        teamKey: json['team_key'] as int?,
+        goals: json['goals'] as int?,
+        assists: json['assists'] as dynamic,
+        penaltyGoals: json['penalty_goals'] as int?,
       );
 
   Map<String, dynamic> toJson() => {

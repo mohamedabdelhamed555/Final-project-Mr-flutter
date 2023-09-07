@@ -2,17 +2,14 @@ import 'package:final_project/model/data/players_data.dart';
 
 class Teams {
   int? success;
-  List<Result>? result;
-
+  List<TeamResult>? result;
   Teams({this.success, this.result});
-
   factory Teams.fromJson(Map<String, dynamic> json) => Teams(
         success: json['success'] as int?,
         result: (json['result'] as List<dynamic>?)
-            ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+            ?.map((e) => TeamResult.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
-
   Map<String, dynamic> toJson() => {
         'success': success,
         'result': result?.map((e) => e.toJson()).toList(),
@@ -25,7 +22,6 @@ class TeamResult {
   String? teamLogo;
   List<Player>? players;
   List<Coach>? coaches;
-
   TeamResult({
     this.teamKey,
     this.teamName,
@@ -35,10 +31,9 @@ class TeamResult {
   });
 
   factory TeamResult.fromJson(Map<String, dynamic> json) => TeamResult(
-        teamKey: json['team_key'] as int?,
-        teamName: json['team_name'] as String? ?? "Unknown Team",
-        teamLogo: json['team_logo'] as String? ??
-            "https://www.seekpng.com/png/full/28-289657_espn-soccer-team-logo-default.png",
+        teamKey: json['team_key'] as int,
+        teamName: json['team_name'] as String?,
+        teamLogo: json['team_logo'] as String?,
         players: (json['players'] as List<dynamic>?)
             ?.map((e) => Player.fromJson(e as Map<String, dynamic>))
             .toList(),

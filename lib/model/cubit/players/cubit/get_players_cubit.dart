@@ -8,7 +8,7 @@ part 'get_players_state.dart';
 class GetPlayersCubit extends Cubit<GetPlayersState> {
   GetPlayersCubit() : super(PlayersInitial());
 
-  void getTeamPlayer(String teamId) {
+  void getTeamPlayer(int teamId) {
     emit(PlayersLoading());
 
     PlayersRepo().getTeamPlayers(teamId).then((value) {

@@ -23,8 +23,6 @@ class FinalProject extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => GetContryCubit()),
         BlocProvider(create: (context) => GetLeaguesCubit()),
-        BlocProvider(create: (context) => GetTeamsCubit()),
-        BlocProvider(create: (context) => GetTopScoresCubit()),
         BlocProvider(create: (context) => GetPlayersCubit()),
       ],
       child: MaterialApp.router(
