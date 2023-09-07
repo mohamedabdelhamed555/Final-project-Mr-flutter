@@ -276,42 +276,36 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: MediaQuery.of(context).size.height / 20,
                     ),
                     TextFormField(
-                        controller: otpController,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                        decoration: InputDecoration(
-                          labelStyle: const TextStyle(color: Colors.white),
-                          labelText: "Enter OTP",
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
+                      controller: otpController,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                      decoration: InputDecoration(
+                        labelStyle: const TextStyle(color: Colors.white),
+                        labelText: "Enter OTP",
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(25.0),
                         ),
-                        validator: (value) {
-                          if (value!.length != 4) {
-                            return "must contain 4-digit number";
-                          } else if (number != int.tryParse(value)) {
-                            return "enter correct OTP";
-                          } else {
-                            return null;
-                          }
-                        }),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                      ),
+                      validator: (value) => value!.length != 4
+                          ? "must contain 4-digit number"
+                          : null,
+                    ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 20,
                     ),
                     Container(
-                        width: MediaQuery.of(context).size.width * 2 / 3,
-                        height: MediaQuery.of(context).size.height * 0.07,
+                        width: MediaQuery.of(context).size.width / 2.5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
                             color: Colors.white),
@@ -320,18 +314,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Text(
                             'Get OTP',
                             style: TextStyle(
-                              color: Color(0xff14142B),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22,
-                            ),
+                                fontSize: 25,
+                                color: Kprimarycolor,
+                                fontWeight: FontWeight.bold),
                           ),
                         )),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
+                      height: MediaQuery.of(context).size.height / 30,
                     ),
                     Container(
-                        width: MediaQuery.of(context).size.width * 2 / 3,
-                        height: MediaQuery.of(context).size.height * 0.07,
+                        width: MediaQuery.of(context).size.width / 2.5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
                             color: Colors.white),
@@ -348,42 +340,33 @@ class _LoginScreenState extends State<LoginScreen> {
                               : const Text(
                                   'Login',
                                   style: TextStyle(
-                                    color: Color(0xff14142B),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                  ),
+                                      fontSize: 25,
+                                      color: Kprimarycolor,
+                                      fontWeight: FontWeight.bold),
                                 ),
                         )),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
+                      height: MediaQuery.of(context).size.height / 40,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 2 / 3,
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          AuthService().sinInWithGoogle();
-                        },
-                        icon: Image.asset(
-                          'assets/images/google.png',
-                          width: 24.0,
-                          height: 24.0,
-                        ),
-                        label: const Text(
-                          'Sign In with Gmail',
-                          style: TextStyle(
-                            color: Color(0xff14142B),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          //foregroundColor: Colors.white,
-                          //backgroundColor: Colors.red[280],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        AuthService().sinInWithGoogle();
+                      },
+                      icon: Image.asset(
+                        'assets/images/icons8-google-48-300x300.png',
+                        width: 24.0,
+                        height: 24.0,
+                      ),
+                      label: const Text(
+                        'Sign In with Gmail',
+                        style: TextStyle(color: Color(0xff14142B)),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        //foregroundColor: Colors.white,
+                        //backgroundColor: Colors.red[280],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
                     ),
