@@ -53,12 +53,12 @@ class _CustomPageViewState extends State<CustomPageView> {
       },
       children: [
         PageViewItem(
-          image: 'assets/images/Messi.png',
+          image: 'assets/images/cristiano.png',
           title: 'Hello amegos',
           subTitle: 'I will be with you in everything about sports',
         ),
         PageViewItem(
-          image: 'assets/images/vardy.png',
+          image: 'assets/images/Messi.png',
           title: 'Hello amegos',
           subTitle: 'You will know the dates of all matches',
         ),

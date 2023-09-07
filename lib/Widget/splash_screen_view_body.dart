@@ -56,7 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         FadeTransition(
           opacity: fadingAnimation,
-          child: CustomSplashImage(image: AssetsData.ronaldo),
+          child: CustomSplashImage(image: AssetsData.Logo),
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:final_project/Screens/countries_screen.dart';
 import 'package:final_project/Screens/home_screen.dart';
 import 'package:final_project/Screens/on_boarding_view.dart';
 import 'package:final_project/Screens/teams_screen.dart';
@@ -16,7 +17,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => homeScreen(),
+        builder: (context, state) => SplashView(),
       ),
       // GoRoute(
       //   path: kTeamsScreenView,

@@ -1,11 +1,12 @@
 import 'package:final_project/Widget/Side_Menu.dart';
 import 'package:final_project/Widget/players.dart';
 import 'package:final_project/model/cubit/players/cubit/get_players_cubit.dart';
+import 'package:final_project/model/data/players_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 
-class playersScreen extends StatelessWidget {
+class playersScreen extends StatefulWidget {
   final String teamName;
   final int teamId;
 
@@ -13,11 +14,33 @@ class playersScreen extends StatelessWidget {
       {super.key, required this.teamName, required this.teamId});
 
   @override
+  State<playersScreen> createState() => _playersScreenState();
+}
+
+class _playersScreenState extends State<playersScreen> {
+  TextEditingController searchController = TextEditingController();
+  late List<Result>? filteredList;
+  void searchItems(List<Result>? playersList, String value) {
+    filteredList = playersList!
+        .where((element) =>
+            element.playerName!.toLowerCase().contains(value.toLowerCase()))
+        .toList();
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    context.read<GetPlayersCubit>().getTeamPlayer(widget.teamId);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: NavBar(),
         appBar: AppBar(
-          title: Center(child: Text('players of $teamName')),
+          automaticallyImplyLeading: true,
+          title: Center(child: Text('players of ${widget.teamName}')),
           backgroundColor: Color(0xff14142B),
           actions: [
             IconButton(
@@ -63,7 +86,7 @@ class playersScreen extends StatelessWidget {
                                                           .size
                                                           .height *
                                                       0.2,
-                                                  child: Image.asset(state
+                                                  child: Image.network(state
                                                       .respose
                                                       .result![index]
                                                       .playerImage),
@@ -143,7 +166,7 @@ class playersScreen extends StatelessWidget {
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                              0.5,
+                                              0.6,
                                           child: Column(
                                             children: [
                                               Text(
@@ -167,7 +190,7 @@ class playersScreen extends StatelessWidget {
                                         CircleAvatar(
                                           radius: 70,
                                           backgroundColor: Colors.transparent,
-                                          child: Image.asset(
+                                          child: Image.network(
                                             state.respose.result![index]
                                                 .playerImage,
                                             width: 80,
