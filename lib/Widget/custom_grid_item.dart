@@ -8,28 +8,17 @@ class GridItemTeams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GridView.custom(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          mainAxisSpacing: 8.0,
-          crossAxisSpacing: 8.0,
-        ),
-        childrenDelegate: SliverChildListDelegate([
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Column(
-              children: [
-                Image.network(
-                  imageUrl,
-                  width: 50,
-                  height: 50,
-                ),
-                Text(text)
-              ],
-            ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(50),
+      child: Column(
+        children: [
+          Image.network(
+            imageUrl,
+            width: 50,
+            height: 50,
           ),
-        ]),
+          Text(text)
+        ],
       ),
     );
   }

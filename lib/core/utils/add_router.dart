@@ -18,10 +18,10 @@ abstract class AppRouter {
         path: '/',
         builder: (context, state) => const SplashView(),
       ),
-      GoRoute(
-        path: kTeamsScreenView,
-        builder: (context, state) => const TeamsScreenView(),
-      ),
+      // GoRoute(
+      //   path: kTeamsScreenView,
+      //   builder: (context, state) => const TeamsScreenView(),
+      // ),
       GoRoute(
         path: kOnBoardingView,
         builder: (context, state) => const OnBoardingView(),

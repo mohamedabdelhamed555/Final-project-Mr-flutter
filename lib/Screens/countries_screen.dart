@@ -1,4 +1,5 @@
 import 'package:final_project/Screens/leagues_screen.dart';
+import 'package:final_project/Widget/Side_Menu.dart';
 import 'package:final_project/model/cubit/countries/get_contry_cubit.dart';
 import 'package:final_project/model/cubit/leagues/cubit/get_leagues_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,19 @@ class _CountriesState extends State<Countries> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
+      appBar: AppBar(
+        title: Center(child: Text("Sports App")),
+        backgroundColor: Color(0xff14142B),
+        actions: [
+          IconButton(
+            icon: Image.asset('assets/images/tv.png'),
+            onPressed: () {
+              // Add your desired functionality here
+            },
+          ),
+        ],
+      ),
       backgroundColor: Color(0xff14142B),
       body: BlocBuilder<GetContryCubit, CountriesState>(
         builder: (context, state) {
@@ -32,14 +46,15 @@ class _CountriesState extends State<Countries> {
                   return GridTile(
                     child: GestureDetector(
                       onTap: () {
+                        state.response.result[index].countryKey;
                         context.read<GetLeaguesCubit>().getAllLeagues(
-                            "${state.response.result[index].countryKey}");
+                            state.response.result[index].countryKey);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => LeaguesScreen(
                               countryId:
-                                  "${state.response.result[index].countryKey}",
+                                  state.response.result[index].countryKey,
                               countryName:
                                   state.response.result[index].countryName,
                             ),

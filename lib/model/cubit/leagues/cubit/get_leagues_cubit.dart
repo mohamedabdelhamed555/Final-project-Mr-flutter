@@ -9,7 +9,7 @@ part 'get_leagues_state.dart';
 class GetLeaguesCubit extends Cubit<GetLeaguesState> {
   GetLeaguesCubit() : super(GetLeaguesInitial());
 
-  void getAllLeagues(String countryId) {
+  void getAllLeagues(int countryId) {
     emit(LeaguesLoading());
     LeaguesRepo().getAllLeagues(countryId).then((value) {
       if (value != null) {

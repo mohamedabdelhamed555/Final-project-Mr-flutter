@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class LeaguesRepo {
-  Future<Leagues?> getAllLeagues(String countryId) async {
+  Future<Leagues?> getAllLeagues(int countryId) async {
     try {
       var response = await http.get(Uri.parse(
-          "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=da248f5665aa5f3116c16ddc9a5e3a9841870cb50ff81537c8f4e970c678e876"));
-
+          "https://apiv2.allsportsapi.com/football/?met=Leagues&countryId=$countryId&APIkey=9819e7462cfeeb44124fd5f716823bdf526bfc2f97353aa89ec3ff0441895eb3"));
       var decodedResponse = jsonDecode(response.body);
-
       if (response.statusCode == 200) {
         Leagues leagues = Leagues.fromJson(decodedResponse);
         return leagues;
