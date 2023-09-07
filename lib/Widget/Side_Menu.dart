@@ -24,10 +24,19 @@ class NavBar extends StatelessWidget {
               color: Color(0xff14142B),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.logout),
-            title: Text("Sign out"),
-            onTap: () => LoginScreen(),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => const LoginScreen(),
+                ),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Sign out"),
+            ),
           ),
         ],
       ),

@@ -118,7 +118,6 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
-
   void validateEmailAndPassword() {
     Future.delayed(const Duration(seconds: 1), () {
       if (formKey.currentState!.validate()) {
@@ -172,12 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-
             builder: (context) => homeScreen(),
-
-            builder: (context) =>
-                homeScreen(),
-
           ),
         );
       });
@@ -208,20 +202,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: riveArtboard == null
                     ? const SizedBox.shrink()
                     : Rive(
-
                         artboard: riveArtboard!,
                       ),
-
-                  artboard: riveArtboard!,
-                ),
-
               ),
               Form(
                 key: formKey,
                 child: Column(
                   children: [
-
-
                     TextFormField(
                       controller: phoneController,
                       style: const TextStyle(
@@ -236,12 +223,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               showCountryPicker(
                                 context: context,
                                 countryListTheme: CountryListThemeData(
-
                                   bottomSheetHeight:
                                       MediaQuery.of(context).size.height / 2,
-
-                                  bottomSheetHeight: MediaQuery.of(context).size.height / 2,
-
                                 ),
                                 onSelect: (value) {
                                   setState(() {
@@ -276,11 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       validator: (value) =>
-
                           value!.length != 11 ? "must contain 11 number" : null,
-
-                      value!.length != 11 ? "must contain 11 number" : null,
-
                       onChanged: (value) {
                         if (value.isNotEmpty &&
                             value.length < 8 &&
@@ -292,8 +271,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           addLookRightController();
                         }
                       },
-
-
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 20,
@@ -320,61 +297,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
-                      validator: (value) =>
-                      value!.length != 4 ? "must contain 4-digit number" : null,
-
+                      validator: (value) => value!.length != 4
+                          ? "must contain 4-digit number"
+                          : null,
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 20,
                     ),
-
-                    TextFormField(
-                        controller: otpController,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                        decoration: InputDecoration(
-                          labelStyle: const TextStyle(color: Colors.white),
-                          labelText: "Enter OTP",
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value!.length != 4) {
-                            return "must contain 4-digit number";
-                          } else if (number != int.tryParse(value)) {
-                            return "enter correct OTP";
-                          } else {
-                            return null;
-                          }
-                        }),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
-                    ),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 2 / 3,
-                        height: MediaQuery.of(context).size.height * 0.07,
-
                     Container(
                         width: MediaQuery.of(context).size.width / 2.5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
                             color: Colors.white),
                         child: TextButton(
-                          onPressed:
-                             generateRandomNumberAndShowDialog
-                          ,
+                          onPressed: generateRandomNumberAndShowDialog,
                           child: const Text(
                             'Get OTP',
                             style: TextStyle(
@@ -388,28 +324,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Container(
                         width: MediaQuery.of(context).size.width / 2.5,
-
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(35),
-                            color: Colors.white),
-                        child: TextButton(
-
-                          onPressed: generateRandomNumberAndShowDialog,
-                          child: const Text(
-                            'Get OTP',
-                            style: TextStyle(
-                              color: Color(0xff14142B),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22,
-                            ),
-                          ),
-                        )),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
-                    ),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 2 / 3,
-                        height: MediaQuery.of(context).size.height * 0.07,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
                             color: Colors.white),
@@ -426,60 +340,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               : const Text(
                                   'Login',
                                   style: TextStyle(
-                                    color: Color(0xff14142B),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                  ),
+                                      fontSize: 25,
+                                      color: Kprimarycolor,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                        )),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 2 / 3,
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          AuthService().sinInWithGoogle();
-                        },
-                        icon: Image.asset(
-                          'assets/images/google.png',
-                          width: 24.0,
-                          height: 24.0,
-                        ),
-                        label: const Text(
-                          'Sign In with Gmail',
-                          style: TextStyle(
-                            color: Color(0xff14142B),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          //foregroundColor: Colors.white,
-                          //backgroundColor: Colors.red[280],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              verifyNumber ();
-                            } else {
-                              addFailController();
-                            }
-                          },
-                          child: verifying
-                              ? const CircularProgressIndicator() // Show circular progress indicator during verification
-                              :
-                          const Text(
-                            'Login',
-                            style: TextStyle(
-                                fontSize: 25,
-                                color: Kprimarycolor,
-                                fontWeight: FontWeight.bold),
-                          ),
                         )),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 40,
@@ -493,15 +357,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 24.0,
                         height: 24.0,
                       ),
-                      label: const Text('Sign In with Gmail'
-                      , style: TextStyle(color: Color(0xff14142B)),),
+                      label: const Text(
+                        'Sign In with Gmail',
+                        style: TextStyle(color: Color(0xff14142B)),
+                      ),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                         //foregroundColor: Colors.white,
                         //backgroundColor: Colors.red[280],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
-
                         ),
                       ),
                     ),

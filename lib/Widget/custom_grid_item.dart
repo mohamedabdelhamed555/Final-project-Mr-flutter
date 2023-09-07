@@ -17,7 +17,10 @@ class GridItemTeams extends StatelessWidget {
             width: 50,
             height: 50,
           ),
-          Text(text)
+          Text(
+            text,
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          )
         ],
       ),
     );
